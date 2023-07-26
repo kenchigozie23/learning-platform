@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+body {
+  background-color: #EAF2EF;
+  font-family: 'Lato', sans-serif;
+}
+/* 
+background-color-two = CDC7E5
+gold - FFE733
+green 0- 00663A
+orange - F5623D
+text-color = #9A48D0
+text button = #613DC1
+#7776BC
+BsPersonFillCheck -person verified
+LuMonitorSpeaker - monitor speaker
+HiSpeakerWave - speaker- wave
+AiOutlineDollar
+BsPencilSquare
+FaSquarePollVertical
+AiOutlineStar
+BsFillPersonFill
+BiDollarCircle
+BsFacebook
+AiOutlineTwitter
+BsInstagram
+AiOutlineArrowUp
+*/
