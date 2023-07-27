@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Link from 'next/link'
 import Image from "next/image";
-import styles from "../Form.module.css"
+import {signIn, signOut } from "next-auth/react"
 import { HiFingerPrint, HiAtSymbol} from "react-icons/hi";
 
 
@@ -37,7 +37,7 @@ function Login() {
           </div>
          
           <input type="submit" value="Register" className=" h-12 w-full border-2 bg-[#613DC1] text-white rounded-md text-sm hover:bg-[#8875bb] transition duration-200 cursor-pointer mb-3" />
-          <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" >Sign in with Google <Image src={"/../public/google.png"} width={20} height={20}/></button>
+          <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" onClick={() => signIn('google', {callbackUrl:"http://localhost:3000"})}>Sign in with Google <Image src={"/../public/google.png"} width={20} height={20}/></button>
           <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" >Sign in with Github <Image src={"/../public/github.png"} width={20} height={20}/></button>
           <p className="my-3 text-sm">Don't have an account? <Link href={"/Register"} className=" text-[#613DC1]">Sign up</Link></p>
         </form>
