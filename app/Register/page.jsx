@@ -1,10 +1,11 @@
 import React from "react";
 import Link from 'next/link'
+import { HiFingerPrint, HiAtSymbol} from "react-icons/hi";
 
 function Register() {
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <div className="bg-white w-90 p-3">
+      <div className="bg-white md:w-[60%] w-96 p-3">
         <h2 className="text-[#613DC1] text-2xl font-semibold my-2">Register</h2>
         <form action="" method="post">
           {/* fullname */}
