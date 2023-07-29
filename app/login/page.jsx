@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import Link from 'next/link'
 import Image from "next/image";
 import { HiFingerPrint, HiAtSymbol} from "react-icons/hi";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import {BsFillPersonFill} from "react-icons/bs"
 
 function Login() {
   const[showPassword, setShowPassword] = useState(false)
   return (
     <div>
-    <Navbar/>
     <div className="w-full h-screen flex justify-center items-center">
       <div className="bg-white md:w-[50%] p-3 w-96">
         <h2 className="text-[#613DC1] text-2xl font-semibold my-2 text-center flex justify-center items-center gap-1">Login
