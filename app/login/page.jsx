@@ -9,7 +9,7 @@ import {BsFillPersonFill} from "react-icons/bs"
 function Login() {
   const[showPassword, setShowPassword] = useState(false)
   return (
-    <>
+    <div>
     <Navbar/>
     <div className="w-full h-screen flex justify-center items-center">
       <div className="bg-white md:w-[50%] p-3 w-96">
@@ -49,7 +49,7 @@ function Login() {
         </form>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
