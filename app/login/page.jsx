@@ -4,15 +4,22 @@ import Link from 'next/link'
 import Image from "next/image";
 import {signIn, signOut } from "next-auth/react"
 import { HiFingerPrint, HiAtSymbol} from "react-icons/hi";
-
-
+import Navbar from "../components/Navbar";
+import {BsFillPersonFill} from "react-icons/bs"
 
 function Login() {
   const[showPassword, setShowPassword] = useState(false)
   return (
+    <>
+    <Navbar/>
     <div className="w-full h-screen flex justify-center items-center">
       <div className="bg-white md:w-[50%] p-3 w-96">
-        <h2 className="text-[#613DC1] text-2xl font-semibold my-2">Login</h2>
+        <h2 className="text-[#613DC1] text-2xl font-semibold my-2 text-center flex justify-center items-center gap-1">Login
+         <BsFillPersonFill size={30}/>
+        </h2>
+          <div className="">
+          </div>
+        
         <form action="" method="post"  className=" ">
           {/* fullname */}
 
@@ -37,12 +44,13 @@ function Login() {
           </div>
          
           <input type="submit" value="Register" className=" h-12 w-full border-2 bg-[#613DC1] text-white rounded-md text-sm hover:bg-[#8875bb] transition duration-200 cursor-pointer mb-3" />
-          <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" onClick={() => signIn('google', {callbackUrl:"http://localhost:3000"})}>Sign in with Google <Image src={"/../public/google.png"} width={20} height={20}/></button>
-          <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" >Sign in with Github <Image src={"/../public/github.png"} width={20} height={20}/></button>
+          <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" onClick={}>Sign in with Google <Image src={"/../public/google.png"} width={20} height={20}/></button>
+          <button  className=" h-12 w-full border-2 bg-gray-50 text-black rounded-md text-sm hover:bg-gray-200 transition duration-200 cursor-pointer mb-3 flex justify-center items-center gap-2" onClick={}>Sign in with Github <Image src={"/../public/github.png"} width={20} height={20}/></button>
           <p className="my-3 text-sm">Don't have an account? <Link href={"/Register"} className=" text-[#613DC1]">Sign up</Link></p>
         </form>
       </div>
     </div>
+    </>
   );
 }
 

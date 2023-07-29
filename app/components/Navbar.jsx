@@ -12,7 +12,9 @@ function Navbar() {
     <div className=' h-[80px]  fixed  w-full '>
       <div className='flex items-center w-full justify-between shadow-md py-4 px-6 md:shadow-none '>
         <header>
-            <h2 className='font-semibold text-xl text-[#613DC1]'>Q-<span className='text-black'>B</span><span>ee</span></h2>
+            <h2 className='font-semibold text-xl text-[#613DC1]'>
+             <Link href="/">Q-<span className='text-black'>B</span><span>ee</span></Link>
+            </h2>
         </header>
         {/* Large Screen for device 
         
@@ -21,7 +23,7 @@ function Navbar() {
         */}
         <nav>
           <ul className='md:flex gap-7 hidden'>
-            <li>Home</li>
+            <li><Link href="/">Home</Link></li>
             <li>Courses</li>
             <li>Members</li>
             <li>About</li>
