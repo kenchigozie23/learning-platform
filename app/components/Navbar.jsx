@@ -46,7 +46,8 @@ function  Navbar() {
         <div className='flex gap-2'>
           <SignedIn>
             <UserButton/>
-            <div className='flex justify-center items-center font-semibold text-md text-gray-500'>
+            <div className='flex justify-center items-center font-semibold text-sm text-gray-500'>
+              <h2>Welcome <span>{user?.firstName}👋</span></h2>
             </div>
           </SignedIn>
           <SignedOut>
