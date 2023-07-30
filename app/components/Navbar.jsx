@@ -3,11 +3,25 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import {AiOutlineBars} from "react-icons/ai";
 import {FaTimes} from "react-icons/fa";
+import {
+  SignInButton,
+  UserButton
+} from "@clerk/nextjs";
+import { SignedIn, SignedOut } from '@clerk/nextjs/app-beta/client';
+import { useUser } from '@clerk/nextjs';
+import {useRouter} from 'next/navigation'
+// import { currentUser } from '@clerk/nextjs';
 
 
 
-function Navbar() {
+
+function  Navbar() {
   const [nav, setNav] = useState(false);
+  const { isLoaded, isSignedIn, user } = useUser();
+  const router = useRouter()
+  if(isLoaded && !isSignedIn){
+    router.push('/sign-in?redirectUrl=/dashboard')
+  }
   return (
     <div className=' h-[80px]  fixed  w-full '>
       <div className='flex items-center w-full justify-between shadow-md py-4 px-6 md:shadow-none '>
@@ -29,15 +43,25 @@ function Navbar() {
             <li>About</li>
           </ul>
         </nav>
-        <div className='flex gap-5'>
+        <div className='flex gap-2'>
+          <SignedIn>
+            <UserButton/>
+            <div className='flex justify-center items-center font-semibold text-md text-gray-500'>
+            </div>
+          </SignedIn>
+          <SignedOut>
+            <SignInButton mode='modal'>
+
           <button className='border-2 p-3 outline-none border-none text-[#613DC1] font-medium'>
-          <Link href={"/login"}>Sign in</Link>
+            Sign in
             
           </button>
+            </SignInButton>
+          </SignedOut>
       
-          <button className='border-2 px-9 py-[5px] bg-[#9A48D0] text-white font-semibold text-sm outline-none border-none rounded-md cursor-pointer hidden md:flex md:items-center md:justify-center'> 
+          {/* <button className='border-2 px-9 py-[5px] bg-[#9A48D0] text-white font-semibold text-sm outline-none border-none rounded-md cursor-pointer hidden md:flex md:items-center md:justify-center'> 
               <Link href={"/Register"}>Register</Link>
-          </button>
+          </button> */}
         
         </div>
 
@@ -52,6 +76,7 @@ function Navbar() {
             <li>Members</li>
             <li>About</li>
           </ul>
+          
     </div>
   )
 }
